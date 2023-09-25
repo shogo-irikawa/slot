@@ -1,0 +1,22 @@
+<BODY>
+    <article id="terms" />
+
+    <script>
+        // ここのAPIURLをご自身のものに変える
+        fetch('https://trirec.microcms.io/api/v1/privacypolicy', {
+            headers: {
+                "X-MICROCMS-API-KEY": "nIKZIDjrWqJmJf30c25qgW9VYkpGdXa5k2oR" // ここkeyを変更す
+            }
+        })
+        .then((res) => {
+            return res.json();
+        })
+        .then((json) => {
+            document.getElementById("terms").innerHTML = json.body;
+        })
+        .catch((reason) => {
+            console.log(reason);
+        });
+    </script>
+</BODY>
+
